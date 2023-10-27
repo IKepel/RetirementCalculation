@@ -1,6 +1,4 @@
-﻿using static RetirementCalculation.Person;
-
-namespace RetirementCalculation
+﻿namespace RetirementCalculation
 {
     internal class Program
     {
@@ -8,13 +6,9 @@ namespace RetirementCalculation
         {
             var person = new Person("Kostya", 60, 40);
 
-            PrintFunc usaCalculator = CalculatePensionUSA;
-            PrintFunc japanCalculator = CalculatePensionJapan;
-            PrintFunc germanyCalculator = CalculatePensionGermany;
-
-            var usaPension = person.GetRetirementValue(usaCalculator);
-            var japanPension = person.GetRetirementValue(japanCalculator);
-            var germanyPension = person.GetRetirementValue(germanyCalculator);
+            var usaPension = person.GetRetirementValue(CalculatePensionUSA);
+            var japanPension = person.GetRetirementValue(CalculatePensionJapan);
+            var germanyPension = person.GetRetirementValue(CalculatePensionGermany);
 
             Console.WriteLine($"{person.Name} receives a pension in the United States in the amount of {usaPension}");
             Console.WriteLine($"{person.Name} receives a pension in Japan in the amount of {japanPension}");
